@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: was
-  namespace: was
+  namespace: argocd
 spec:
   ports:
     - port: 80
