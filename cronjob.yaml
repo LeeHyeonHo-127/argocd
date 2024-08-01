@@ -1,41 +1,41 @@
----
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: morning-job
-spec:
-  schedule: "0 7-9 * * *"
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          containers:
-          - name: morning-task
-            image: nginx
-            imagePullPolicy: IfNotPresent
-            command:
-            - /bin/sh
-            - -c
-            - date; echo "Running morning task"
-          restartPolicy: OnFailure
+# ---
+# apiVersion: batch/v1
+# kind: CronJob
+# metadata:
+#   name: morning-job
+# spec:
+#   schedule: "0 7-9 * * *"
+#   jobTemplate:
+#     spec:
+#       template:
+#         spec:
+#           containers:
+#           - name: morning-task
+#             image: nginx
+#             imagePullPolicy: IfNotPresent
+#             command:
+#             - /bin/sh
+#             - -c
+#             - date; echo "Running morning task"
+#           restartPolicy: OnFailure
 
----
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: evening-job
-spec:
-  schedule: "0 17-20 * * *"
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          containers:
-          - name: evening-task
-            image: busybox
-            imagePullPolicy: IfNotPresent
-            command:
-            - /bin/sh
-            - -c
-            - date; echo "Running evening task"
-          restartPolicy: OnFailure
+# ---
+# apiVersion: batch/v1
+# kind: CronJob
+# metadata:
+#   name: evening-job
+# spec:
+#   schedule: "0 17-20 * * *"
+#   jobTemplate:
+#     spec:
+#       template:
+#         spec:
+#           containers:
+#           - name: evening-task
+#             image: busybox
+#             imagePullPolicy: IfNotPresent
+#             command:
+#             - /bin/sh
+#             - -c
+#             - date; echo "Running evening task"
+#           restartPolicy: OnFailure
